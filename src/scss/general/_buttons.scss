@@ -1,0 +1,31 @@
+.c-btn{
+    color: var(--secondary-color2);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 13px 26px;
+    justify-content: center;
+    transition: background var(--base-transition), color var(--base-transition);
+
+    &.-primary{
+        background: var(--primary-color1);
+
+        @include hover{ 
+            background: var(--primary-color2);
+            color: var(--secondary-color2);
+            transition: background var(--base-transition), color var(--base-transition);
+        }
+    }
+
+    &.-secondary{
+        background: var(--primary-color2);
+        max-width: 170px;
+        width: 100%;
+
+        @include hover{   
+            background: var(--secondary-color2);
+            color: var(--primary-color1);
+            transition: background var(--base-transition), color var(--base-transition);
+        }
+    }
+}

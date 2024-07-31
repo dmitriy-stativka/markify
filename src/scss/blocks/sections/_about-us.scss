@@ -1,0 +1,30 @@
+.about-us{
+    padding: 5rem 0;
+
+    @include media('<desktop') {
+        padding-bottom: 0;
+    }
+
+    .-h2{
+        margin: auto;
+    }
+
+    &__row{
+        display: flex;
+        justify-content: space-between;
+        gap: 6vw;
+        margin-top: 40px;
+
+        @include media('<desktop') {
+            flex-direction: column;
+        }
+    }
+
+    &__item{
+        flex-basis: 50%;
+
+        .-h3{
+            margin-bottom: 15px;
+        }
+    }
+}

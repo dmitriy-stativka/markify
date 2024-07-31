@@ -1,0 +1,41 @@
+.site-footer{
+    padding: 65px 15px;
+    background: var(--secondary-color4);
+    text-align: center;
+
+    &__list{
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 25px 0;
+
+        @include media('<tablet') {
+            flex-direction: column;
+        }
+
+        .menu-link{
+            padding: 12px 15px;
+        }
+    }
+
+    strong{
+        display: block;
+        color: var(--secondary-color3);
+    }
+
+    &__socials{
+        gap: 25px;
+
+        @include media('<tablet') {
+            flex-direction: row;
+        }
+
+        a{
+            color: var(--primary-color1);
+
+            @include hover{
+                color: var(--primary-color2);
+            }
+        }
+    }
+}

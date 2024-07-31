@@ -1,0 +1,45 @@
+// Define breakpoints map
+$breakpoints: (
+  'phone': 320px,
+  'phone-l': 575px,
+  'tablet': 767px,
+  'desktop': 1112px,
+  'desktop-m': 1280px,
+  'desktop-l': 1440px,
+  'desktop-xl': 1660px,
+  'desktop-1920': 1920px
+);
+
+// Mixin for media queries with condition
+@mixin media($condition) {
+  $breakpoint: null;
+  $operator: null;
+
+  // Extract operator and breakpoint name
+  @if str-index($condition, '>') {
+    $operator: 'min';
+    $breakpoint: str-slice($condition, 2);
+  } @else if str-index($condition, '<') {
+    $operator: 'max';
+    $breakpoint: str-slice($condition, 2);
+  } @else {
+    $operator: 'min';
+    $breakpoint: $condition;
+  }
+
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+  @if $breakpoint-value != null {
+    @if $operator == 'min' {
+      @media (min-width: $breakpoint-value) {
+        @content;
+      }
+    } @else if $operator == 'max' {
+      @media (max-width: $breakpoint-value) {
+        @content;
+      }
+    }
+  } @else {
+    @warn "Breakpoint `#{$breakpoint}` is not defined in the `$breakpoints` map.";
+  }
+}

@@ -1,0 +1,26 @@
+.section-choose{
+    padding-bottom: 10rem;
+
+    @include media('<desktop') {
+        padding-bottom: 4rem;
+    }
+
+    &__banner{
+        background: var(--primary-color1);
+        border-radius: 15px;
+        padding: 65px;
+
+        @include media('<desktop') {
+            padding: 45px 15px;
+        }
+
+        .-h1{
+            color: var(--secondary-color2);
+        }
+    }
+
+    &__sub{
+        color: var(--secondary-color2);
+        margin: 15px 0 30px 0;
+    }
+}

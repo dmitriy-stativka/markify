@@ -1,0 +1,102 @@
+.section-services{
+    padding: 4rem 0;
+
+    .-h2{
+        margin-bottom: 40px;
+
+        @include media('<desktop') {
+            margin: auto auto 40px auto;
+        }
+    }
+
+    &__row{
+        display: flex;
+        justify-content: space-between;
+        gap: 6vw;
+        margin-top: 40px;
+
+        @include media('<desktop') {
+            flex-direction: column;
+        }
+    }
+
+    &__media{
+        flex-basis: 45%;
+
+        img{
+            display: block;
+            margin: auto;
+        }
+    }
+
+    &__content{
+        flex-basis: 55%;
+    }
+
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 25px;
+
+        @include media('<desktop') {
+            grid-template-rows: auto;
+        }
+    }
+
+    &__item{
+        background: var(--primary-color2);
+        border-radius: 10px;
+        padding: 25px;
+        color: var(--secondary-color2);
+        text-align: center;
+
+        &:first-child{
+            grid-row: 1 / -1;
+            background: var(--primary-color1);
+
+            @include media('<desktop') {
+                grid-column: 1 / -1;
+            }
+
+            ul{
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+            }
+        }
+
+        &:not(&:first-child){
+            ul{
+                display: flex;
+                justify-content: space-around;
+
+                @include media('<desktop') {
+                    flex-direction: column;
+
+                    li{
+                        margin-bottom: 10px;
+
+                        &:last-child{
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        li{
+            font-size: 18px;
+            font-weight: 700;
+
+            @include media('<desktop') {
+                font-size: 14px;
+            }
+        }
+
+        .-h3{
+            color: var(--secondary-color2);
+            margin-bottom: 25px;
+        }
+    }
+}
