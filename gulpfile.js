@@ -46,7 +46,7 @@ const watcher = () => {
 
 const start = gulp.series(clean, htmlInclude, scripts, styles, resources, images, ico, webpImages, svgSprites, watcher);
 const backend = gulp.series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, ico, webpImages, svgSprites);
-const build = gulp.series(clean, htmlInclude, scripts, styles, resources, images, webpImages, ico,  svgSprites, htmlMinify);
+const build = gulp.series(clean, htmlInclude, scripts, styles, images, webpImages, ico,  svgSprites, htmlMinify);
 const cache = gulp.series(cacheTask, rewrite);
 const zip = zipFiles;
 
